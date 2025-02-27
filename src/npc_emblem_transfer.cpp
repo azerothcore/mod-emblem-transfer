@@ -1,10 +1,10 @@
-#include "ScriptMgr.h"
-#include "Configuration/Config.h"
 #include "Chat.h"
+#include "Configuration/Config.h"
 #include "GossipDef.h"
+#include "Language.h"
 #include "Player.h"
 #include "ScriptedGossip.h"
-#include "Language.h"
+#include "ScriptMgr.h"
 
 enum Actions
 {
@@ -94,9 +94,7 @@ public:
         }
 
         if (action == ACTION_NONE)
-        {
             return OnGossipHello(player, creature);
-        }
 
         // Player wants to get its emblems
         if (action == ACTION_RETRIEVE_EMBLEMS)
@@ -184,9 +182,7 @@ public:
         }
         // Player selected a character to transfer
         else
-        {
             AddGossipItemFor(player, GOSSIP_ICON_MONEY_BAG, "Last step: Amount of emblems", sender, action, "Enter the amount of emblems to transfer:", 0, true);
-        }
 
         SendGossipMenuFor(player, DEFAULT_GOSSIP_MESSAGE, creature->GetGUID());
         return true;
