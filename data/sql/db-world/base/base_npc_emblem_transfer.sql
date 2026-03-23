@@ -5,8 +5,7 @@ SET @Entry      := 100000,
 
 -- NPC
 DELETE FROM `creature_template` WHERE `entry`=@Entry;
-INSERT INTO `creature_template` (`entry`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `unit_class`, `unit_flags`, `type`, `type_flags`, `RegenHealth`, `flags_extra`, `ScriptName`) VALUES
-(@Entry, @Name, @Title, "Buy", 0, 80, 80, 35, 1, 1, 1.14286, 1, 0, 1, 2, 7, 138936390, 1, 16777216, "npc_emblem_transfer");
+INSERT INTO `creature_template` (`entry`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `rank`, `unit_class`, `unit_flags`, `type`, `type_flags`, `RegenHealth`, `flags_extra`, `ScriptName`) VALUES(@Entry, @Name, @Title, "Buy", 0, 80, 80, 35, 1, 1, 1.14286, 0, 1, 2, 7, 138936390, 1, 16777216, "npc_emblem_transfer");
 
 -- NPC MODEL
 DELETE FROM `creature_template_model` WHERE `CreatureID` = @Entry;
